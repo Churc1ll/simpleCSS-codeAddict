@@ -19,7 +19,7 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4, a {
   text-transform: capitalize;
 }
 /* global */
@@ -39,11 +39,14 @@ h4 {
 .title-text {
   font-size: 3.9rem;
   color: var(--grey);
+  transition: all 1s 2s ease;
+
 }
 .title-underline {
   width: 3.3rem;
+  transition: width 3s ease, border 1s 2s ease;
   border: 3px solid var(--blue);
-  transition: all 2s ease-in;
+  /* transition: all 2s ease-in; */
 }
 .title:hover .title-underline {
   width: 300px;
@@ -56,7 +59,10 @@ h4 {
   min-height: 100vh;
 }
 nav {
-  flex: 0 0 auto;
+  flex: 0 0 auto; 
+}
+.links {
+display: none;
 }
 .banner {
   flex: 1 0 auto;
@@ -68,6 +74,7 @@ nav ul li a {
   padding: 10px;
   font-size: 20px;
   transition: all 1s ease;
+
 }
 nav a:hover {
   padding-left: 1rem;
@@ -161,11 +168,13 @@ nav a:hover {
 }
 .banner-title {
   font-size: 4rem;
-}
+  transition: all 1s 2s ease;
+} 
 .banner-underline {
-  width: 14rem;
+  width: 0;
   margin: 10px auto;
   border: 3px solid var(--blue);
+  transition: width 3s ease, border 1s 2s ease;
 }
 .banner-subtitle {
   margin: 20px 0 40px 0;
@@ -180,7 +189,8 @@ nav a:hover {
   background: var(--blue);
   border: 3px solid var(--blue);
   transition: all 3s ease;
-}
+};
+
 .banner-box a:hover {
   background: transparent;
   border: 3px solid var(--light);
@@ -238,7 +248,7 @@ nav a:hover {
   }
 }
 .about {
-  padding: 40px;
+  padding: 35px 0 20px;
   background: lightgray;
 }
 .about-text,
@@ -312,7 +322,7 @@ nav a:hover {
   }
   .service {
     min-width: 15rem;
-    flex: 0 0 calc(50% - 2rem);
+    flex: 0 1 calc(50% - 2rem);
   }
 }
 @media screen and (min-width: 972px) {
